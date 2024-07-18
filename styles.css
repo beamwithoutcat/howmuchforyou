@@ -1,0 +1,125 @@
+/* Tailwind CSS */
+@import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+/* Custom CSS */
+body {
+    background-color: #f3f4f6;
+    padding: 1.5rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.max-w-3xl {
+    max-width: 48rem;
+    margin: auto;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.shadow-lg {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.p-6 {
+    padding: 1.5rem;
+}
+
+.mb-8 {
+    margin-bottom: 2rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.font-bold {
+    font-weight: bold;
+}
+
+.text-pink-600 {
+    color: #d53f8c;
+}
+
+.text-gray-800 {
+    color: #2d3748;
+}
+
+.text-gray-700 {
+    color: #4a5568;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.border {
+    border-width: 1px;
+    border-color: #e2e8f0;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.option {
+    background-color: #e5e7eb;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-align: center;
+    flex: 1;
+}
+
+.option.selected {
+    background-color: #3b82f6;
+    color: #ffffff;
+}
+
+/* 결과 애니메이션 */
+.fade-in {
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.show {
+    opacity: 1;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .options {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}

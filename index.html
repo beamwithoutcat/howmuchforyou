@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>축의금 딱 정해준다!</title>
+    <link href="styles.css" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3249483891523879"
+     crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-3xl mx-auto bg-white shadow-lg rounded-lg p-6">
+        <h1 class="text-4xl font-bold mb-8 text-center text-pink-600">축의금 딱 정해준다!</h1>
+        
+        <!-- 결혼식 전 섹션 -->
+        <div class="block mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pre Wedding</h2>
+            
+            <!-- 이름 입력 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">주인공의 이름</label>
+                <input type="text" id="brideGroomName" class="block w-full p-2 border rounded" placeholder="결혼식 주인공의 이름을 입력해주세요." oninput="updateQuestions()">
+            </div>
+
+            <!-- 결혼 날짜 입력 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">결혼식 날짜</label>
+                <input type="date" id="weddingDate" class="block w-full p-2 border rounded" onchange="updateQuestions()">
+            </div>
+            
+            <!-- 관계 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2" id="relationshipLabel">결혼 당사자는 당신과 어떤 관계인가요?</label>
+                <div class="options" id="relationship">
+                    <div class="option" data-value="family">가족</div>
+                    <div class="option" data-value="friend">친구</div>
+                    <div class="option" data-value="colleague">직장/학교</div>
+                    <div class="option" data-value="other">기타</div>
+                </div>
+            </div>
+
+            <!-- 친밀도 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">주인공에 대한 애정의 크기 (0 - 10)</label>
+                <input type="range" id="closeness" min="0" max="10" value="5" class="w-full">
+                <span id="closenessValue" class="block text-center text-gray-800 mt-2">5</span>
+            </div>
+
+            <!-- 결혼 여부 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">당신은 결혼을 하셨나요?</label>
+                <div class="options" id="maritalStatus">
+                    <div class="option" data-value="single">미혼 (No)</div>
+                    <div class="option" data-value="married">기혼 (Yes)</div>
+                </div>
+            </div>
+
+            <!-- 기혼일 경우 축의금 -->
+            <div class="mb-4 hidden" id="pastWeddingBlock">
+                <label class="block text-lg font-medium text-gray-700 mb-2" id="pastWeddingGiftLabel">결혼 주인공이 당신의 결혼식에서 낸 축의금 (만원)</label>
+                <input type="number" id="pastWeddingGift" class="block w-full p-2 border rounded" placeholder="축의금을 입력하세요">
+            </div>
+        </div>
+
+        <!-- 결혼식 섹션 -->
+        <div class="block mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Wedding</h2>
+            
+            <!-- 참석 여부 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">결혼식에 참석하실 예정인가요?</label>
+                <div class="options" id="attendance">
+                    <div class="option" data-value="yes">네</div>
+                    <div class="option" data-value="no">아니오</div>
+                </div>
+            </div>
+
+            <!-- 웨딩 규모 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2">웨딩의 규모는 어느 정도인가요?</label>
+                <div class="options" id="weddingScale">
+                    <div class="option" data-value="small">소규모</div>
+                    <div class="option" data-value="medium">일반적</div>
+                    <div class="option" data-value="large">대규모</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 결혼식 후 섹션 -->
+        <div class="block mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Post Wedding</h2>
+            
+            <!-- 기대하는 대우 -->
+            <div class="mb-4">
+                <label class="block text-lg font-medium text-gray-700 mb-2" id="expectedTreatmentLabel">결혼식이 끝난 뒤 결혼 주인공이 당신을 어떻게 대하기를 바라나요?</label>
+                <div class="options" id="expectedTreatment">
+                    <div class="option" data-value="respect">존경</div>
+                    <div class="option" data-value="emotion">감동</div>
+                    <div class="option" data-value="neutral">덤덤</div>
+                    <div class="option" data-value="doubt">의문</div>
+                    <div class="option" data-value="dislike">혐오</div>
+                </div>
+            </div>
+
+            <!-- 주인공이 내야할 축의금 -->
+            <div class="mb-4 hidden" id="futureGiftBlock">
+                <label class="block text-lg font-medium text-gray-700 mb-2" id="futureGiftLabel">언젠가 당신의 결혼식에 참석한 결혼 주인공은 축의금으로 얼마를 낼까요? (만원)</label>
+                <input type="number" id="futureGiftAmount" class="block w-full p-2 border rounded" placeholder="예상 축의금을 입력하세요">
+            </div>
+        </div>
+
+        <!-- 상한선 -->
+        <div class="block mb-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Limit</h2>
+            <label class="block text-lg font-medium text-gray-700 mb-2">당신의 주머니 사정을 고려할 때 축의금 상한선은 최대 얼마인가요? (만원)</label>
+            <input type="number" id="maxAmount" class="block w-full p-2 border rounded" placeholder="현실적이고 솔직하게 대답해주세요.">
+        </div>
+
+        <!-- 결과 -->
+        <div class="mb-4">
+            <button onclick="calculateAmount()" class="w-full bg-blue-500 text-white p-3 rounded-lg">이 버튼을 누르면 적절한 축의금과 결혼 주인공과의 관계가 결정됩니다.</button>
+        </div>
+        <div id="result" class="text-center text-xl font-bold fade-in"></div>
+        <div id="etiquetteTip" class="text-center text-md font-medium text-gray-700 mt-4"></div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
