@@ -113,8 +113,10 @@ function calculateAmount() {
         etiquetteTip = "적절하지 못한 축의금는 관계를 깨트릴 위험이 있습니다.";
     } else if (resultText === "5만원" || resultText === "7만원" || resultText === "10만원") {
         etiquetteTip = "일반적인 축의금은 5~10만원입니다. 결혼식에 참석하는 경우 이 금액이 적당합니다.";
+    } else if (resultText === "20만원") {
+        etiquetteTip = "아주 가까운 사이라면 20만원의 축의금은 적적할 금액이 될 수 있습니다.";
     } else if (resultText === "20만원 이상") {
-        etiquetteTip = "상한선 내에서 자유롭게 내시면 됩니다.";
+        etiquetteTip = "여유가 되는 선에서 결혼을 축복하시는 만큼 자유롭게.";
     }
 
     // 결과 표시
