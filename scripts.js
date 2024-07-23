@@ -32,7 +32,7 @@ function updateQuestions() {
     } else {
         document.getElementById('relationshipLabel').innerText = `결혼 주인공은 당신과 어떤 관계인가요?`;
         document.getElementById('pastWeddingGiftLabel').innerText = `결혼 주인공이 당신의 결혼식에서 낸 축의금 (만원)`;
-        document.getElementById('expectedTreatmentLabel').innerText = `결혼식 후 결혼 주인공이 당신을 어떻게 대하기를 바라나요?`;
+        document.getElementById('expectedTreatmentLabel').innerText = `결혼식 후 결혼 주인공이 당신을 어떻게 대하기를 바라는가?`;
         document.getElementById('attendingLabel').innerText = `결혼 주인공의 결혼식에 참석하시나요?`;
         document.getElementById('futureGiftLabel').innerText = `미래에 당신의 결혼식에서 결혼 주인공이 낼 축의금 (만원)`;
     }
@@ -62,7 +62,7 @@ function calculateAmount() {
         'family': 5,
         'friend': 3,
         'colleague': 2,
-        'other': 
+        'other': 1
     };
     const relationshipWeight = relationshipWeights[relationship] || 0;
     baseAmount += relationshipWeight * (closeness / 20); // 친밀도의 영향을 줄이기 위해 나누기
