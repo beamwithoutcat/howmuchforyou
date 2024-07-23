@@ -106,24 +106,35 @@ display: none;
 }
 
 .option {
-display: inline-block;
-padding: 0.5rem 1rem;
-margin: 0.25rem;
-background-color: #e2e8f0;
-border-radius: 0.25rem;
-cursor: pointer;
+    flex: 1 0 auto;
+    padding: 0.5rem 1rem;
+    background-color: #e2e8f0;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: center;
 }
 
 .option.selected {
-background-color: #4a5568;
-color: white;
+    background-color: #4a5568;
+    color: white;
 }
 
 .fade-in {
-opacity: 0;
-transition: opacity 0.5s;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .show {
-opacity: 1;
+    opacity: 1;
+}
+
+.options {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.options .option {
+    flex: 1;
+    text-align: center;
 }
